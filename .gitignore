@@ -1,0 +1,21 @@
+# Ignore dependencies from npm and Composer:
+/node_modules
+
+# Ignore dependencies from Composer:
+/vendor
+
+# Ignore build directory:
+/build
+
+# Ignore generated JavaScript files:
+*.min.js
+
+# Ignore generated CSS files:
+style.css
+style-editor.css
+
+# Ignore the generated zip file:
+my-theme.zip
+
+# Ignore .DS_Store files from macOS:
+.DS_Store
