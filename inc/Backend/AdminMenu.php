@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Main plugin class.
+ * Admin Menu class.
  *
  * @package js-gallery
  */
@@ -10,6 +10,9 @@ namespace JS_Gallery\Backend;
 
 defined('ABSPATH') or die('Thanks for visting');
 
+/**
+ * Admin Menu class.
+ */
 class AdminMenu
 {
 	public static function init(): void

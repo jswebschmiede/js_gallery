@@ -14,9 +14,18 @@ use JS_Gallery\Assets\Assets;
 use JS_Gallery\Backend\AdminMenu;
 use JS_Gallery\Backend\MetaBoxes;
 use JS_Gallery\PostTypes\CP_Gallery;
+use JS_Gallery\Shortcodes\Shortcode;
 
+/**
+ * Main plugin class.
+ */
 class Gallery
 {
+	/**
+	 * Initializes the plugin.
+	 *
+	 * @return void
+	 */
 	public static function init(): void
 	{
 		self::define_constants();
@@ -24,6 +33,7 @@ class Gallery
 		CP_Gallery::init();
 		AdminMenu::init();
 		MetaBoxes::init();
+		Shortcode::init();
 	}
 
 
@@ -38,17 +48,32 @@ class Gallery
 		define('JS_GALLERY_PLUGIN_URL', plugin_dir_url(__FILE__));
 	}
 
+	/**
+	 * Activates the plugin.
+	 *
+	 * @return void
+	 */
 	public static function activate(): void
 	{
 		flush_rewrite_rules();
 	}
 
+	/**
+	 * Deactivates the plugin.
+	 *
+	 * @return void
+	 */
 	public static function deactivate(): void
 	{
 		flush_rewrite_rules();
 		unregister_post_type('js_gallery');
 	}
 
+	/**
+	 * Uninstalls the plugin.
+	 *
+	 * @return void
+	 */
 	public static function uninstall(): void
 	{
 	}

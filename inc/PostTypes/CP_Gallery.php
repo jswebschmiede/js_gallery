@@ -9,8 +9,16 @@ namespace JS_Gallery\PostTypes;
 
 defined('ABSPATH') or die('Thanks for visting');
 
+/**
+ *  plugin costum post type gallery class.
+ */
 class CP_Gallery
 {
+	/**
+	 * Initializes the post type.
+	 *
+	 * @return void
+	 */
 	public static function init()
 	{
 		add_action('init', [__CLASS__, 'create_post_type']);
@@ -19,7 +27,7 @@ class CP_Gallery
 
 	/**
 	 * Registers the post type.
-	 * @link https://codex.wordpress.org/Function_Reference/register_post_type
+	 * @link https://developer.wordpress.org/reference/functions/register_post_type/
 	 * @return void
 	 */
 	public static function create_post_type(): void
@@ -33,7 +41,7 @@ class CP_Gallery
 			],
 			'public'            => true,
 			'has_archive'       => false,
-			'supports'          => ['title', 'editor', 'thumbnail'],
+			'supports'          => ['title', 'thumbnail'],
 			'hierarchical'      => false,
 			'show_ui'           => true,
 			'show_in_menu'      => false,
