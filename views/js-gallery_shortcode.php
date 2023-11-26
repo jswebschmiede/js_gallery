@@ -17,6 +17,7 @@ $args = [
 
 // The Query
 $query = new WP_Query($args);
+
 ?>
 
 <div class="js-gallery">
@@ -24,8 +25,8 @@ $query = new WP_Query($args);
 		<?php $query->the_post(); ?>
 
 		<?php foreach (get_post_meta(get_the_ID(), '_js_gallery_gal_ids', true) as $idx => $gal_id) : ?>
-			<figure class="js-gallery__image">
-				<img class="" src="<?php echo wp_get_attachment_image_src($gal_id, 'large')[0]; ?>" alt="<?php echo (get_post_meta($gal_id, '_wp_attachment_image_alt', true) !== "") ? get_post_meta($gal_id, '_wp_attachment_image_alt', true) : get_the_title($gal_id); ?>" loading="lazy">
+			<figure class="js-gallery__image-wrap">
+				<img class="js-gallery__image" src="<?php echo wp_get_attachment_image_src($gal_id, (boolval(get_post_meta(get_the_ID(), '_js_gallery_crop_images', true))) ? 'js-gallery-large' : 'full')[0]; ?>" alt="<?php echo (get_post_meta($gal_id, '_wp_attachment_image_alt', true) !== "") ? get_post_meta($gal_id, '_wp_attachment_image_alt', true) : get_the_title($gal_id); ?>" loading="lazy">
 			</figure>
 		<?php endforeach; ?>
 

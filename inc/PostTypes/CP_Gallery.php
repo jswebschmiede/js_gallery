@@ -41,7 +41,7 @@ class CP_Gallery
 			],
 			'public'            => true,
 			'has_archive'       => false,
-			'supports'          => ['title', 'thumbnail'],
+			'supports'          => ['title'],
 			'hierarchical'      => false,
 			'show_ui'           => true,
 			'show_in_menu'      => false,

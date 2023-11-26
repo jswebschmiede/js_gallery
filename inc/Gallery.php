@@ -29,6 +29,8 @@ class Gallery
 	public static function init(): void
 	{
 		self::define_constants();
+		add_action('after_setup_theme', [__CLASS__, 'add_custom_image_sizes']);
+
 		Assets::init();
 		CP_Gallery::init();
 		AdminMenu::init();
@@ -46,6 +48,11 @@ class Gallery
 		define('JS_GALLERY_VERSION', '1.0.0');
 		define('JS_GALLERY_PLUGIN_PATH', plugin_dir_path(__FILE__));
 		define('JS_GALLERY_PLUGIN_URL', plugin_dir_url(__FILE__));
+	}
+
+	public static function add_custom_image_sizes(): void
+	{
+		add_image_size('js-gallery-large', 770, 580, true);
 	}
 
 	/**

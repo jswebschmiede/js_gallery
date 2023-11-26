@@ -18,6 +18,9 @@ class AdminMenu
 	public static function init(): void
 	{
 		add_action('admin_menu', [__CLASS__, 'add_admin_menu']);
+		add_filter('manage_js_gallery_posts_columns', [__CLASS__, 'add_columns']);
+		add_filter('manage_edit-js_gallery_sortable_columns', [__CLASS__, 'sortable_columns']);
+		add_action('manage_js_gallery_posts_custom_column', [__CLASS__, 'render_columns'], 10, 2);
 	}
 
 	/**
@@ -76,5 +79,58 @@ class AdminMenu
 
 
 		require_once plugin_dir_path(dirname(dirname(__FILE__))) . 'views/js-gallery_admin-page.php';
+	}
+
+	/**
+	 * Adds the columns to the post type.
+	 * @link https://developer.wordpress.org/reference/hooks/manage_post_type_posts_columns/
+	 * @param array $columns The columns.
+	 * @return array The new added columns.
+	 */
+	public static function add_columns(array $columns): array
+	{
+		$columns = [
+			'cb' => $columns['cb'],
+			'title' => esc_html__('Title'),
+			'js_gallery_images' => esc_html__('Bilder', 'js-gallery'),
+			'js_gallery_shortcode' => esc_html__('Shortcode', 'js-gallery'),
+			'date' => esc_html__('Date')
+		];
+
+		return $columns;
+	}
+
+	/**
+	 * Makes the columns sortable.
+	 * @link https://developer.wordpress.org/reference/hooks/manage_this-screen-id_sortable_columns/
+	 * @param array $columns The columns.
+	 * @return array The sortable columns.
+	 */
+	public static function sortable_columns(array $columns): array
+	{
+		return $columns;
+	}
+
+	/**
+	 * Renders the columns for the post type.
+	 * @link https://developer.wordpress.org/reference/hooks/manage_posts_custom_column/
+	 * @param string $column The column.
+	 * @param int $post_id The post ID.
+	 * @return void
+	 */
+	public static function render_columns(string $column, int $post_id): void
+	{
+		switch ($column) {
+			case 'js_gallery_shortcode':
+				echo '<code>[js_gallery id="' . $post_id . '"]</code>';
+				break;
+			case 'js_gallery_images':
+				foreach (get_post_meta($post_id, '_js_gallery_gal_ids', true) as $image) {
+					echo '<img width="50" height="50" style="margin-right:5px;" src="' . wp_get_attachment_image_src($image)[0] . '" alt="' . get_post_meta($image, '_wp_attachment_image_alt', true) . '" loading="lazy">';
+				}
+				break;
+			default:
+				break;
+		}
 	}
 }

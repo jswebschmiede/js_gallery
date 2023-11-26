@@ -47,6 +47,15 @@ class MetaBoxes
 			'normal',
 			'high'
 		);
+
+		add_meta_box(
+			'js_gallery_options_meta_box',
+			__('Galerie Optionen', 'js-gallery'),
+			[__CLASS__, 'render_options_meta_box'],
+			'js_gallery',
+			'side',
+			'low'
+		);
 	}
 
 	/**
@@ -58,6 +67,17 @@ class MetaBoxes
 	public static function render_meta_box(WP_Post $post): void
 	{
 		require_once plugin_dir_path(dirname(dirname(__FILE__))) . 'views/js-gallery_metabox.php';
+	}
+
+	/**
+	 * Renders the options meta box.
+	 *
+	 * @param WP_Post $post The post object.
+	 * @return void
+	 */
+	public static function render_options_meta_box(WP_Post $post): void
+	{
+		require_once plugin_dir_path(dirname(dirname(__FILE__))) . 'views/js-gallery_options_metabox.php';
 	}
 
 	/**
@@ -128,6 +148,20 @@ class MetaBoxes
 				);
 			} else {
 				delete_post_meta($post_id, '_js_gallery_gal_ids', $old_ids);
+			}
+
+			if (array_key_exists('js-gallery-crop-images', $_POST)) {
+				update_post_meta(
+					$post_id,
+					'_js_gallery_crop_images',
+					1
+				);
+			} else {
+				update_post_meta(
+					$post_id,
+					'_js_gallery_crop_images',
+					0
+				);
 			}
 		}
 	}
