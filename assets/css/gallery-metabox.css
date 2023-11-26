@@ -1,0 +1,23 @@
+#gallery-metabox-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	grid-gap: 10px;
+}
+
+#gallery-metabox-list li {
+	cursor: move;
+	text-align: center;
+}
+
+.image-preview {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	object-fit: cover;
+	margin-bottom: 5px;
+}
+
+.delete {
+	color: #a00;
+	cursor: pointer;
+}
