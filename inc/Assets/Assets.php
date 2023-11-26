@@ -22,17 +22,19 @@ class Assets
 	 */
 	public static function init()
 	{
-		add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_scripts']);
+		add_action('wp_enqueue_scripts', [__CLASS__, 'register_scripts'], 999);
 		add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_metabox_scripts']);
 	}
 
 	/**
-	 * Enqueues the plugin assets.
+	 * Registers the plugin assets.
 	 *
 	 * @return void
 	 */
-	public static function enqueue_scripts()
+	public static function register_scripts(): void
 	{
+		wp_register_script('js-gallery-venobox', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/vendor/venobox/venobox.min.js', array('jquery'), JS_GALLERY_VERSION, true);
+		wp_register_style('js-gallery-venobox', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/vendor/venobox/venobox.min.css', array(), JS_GALLERY_VERSION, 'all');
 	}
 
 	/**
