@@ -36,8 +36,8 @@ class AdminMenu
 	public static function add_admin_menu(): void
 	{
 		add_menu_page(
-			__('JS Gallery', 'js-gallery'),
-			__('JS Gallery', 'js-gallery'),
+			__('JS Galerie', 'js-gallery'),
+			__('JS Galerie', 'js-gallery'),
 			'manage_options',
 			'js-gallery-admin',
 			[__CLASS__, 'render_admin_page'],
@@ -46,8 +46,8 @@ class AdminMenu
 
 		add_submenu_page(
 			'js-gallery-admin',
-			__('Manage Gallerys', 'js-gallery'),
-			__('Manage Gallerys', 'js-gallery'),
+			__('Galerien verwalten', 'js-gallery'),
+			__('Galerien verwalten', 'js-gallery'),
 			'manage_options',
 			'edit.php?post_type=js_gallery',
 			null,
@@ -56,8 +56,8 @@ class AdminMenu
 
 		add_submenu_page(
 			'js-gallery-admin',
-			__('Add New Gallery', 'js-gallery'),
-			__('Add New Gallery', 'js-gallery'),
+			__('Neue Galerie hinzufügen', 'js-gallery'),
+			__('Neue Galerie hinzufügen', 'js-gallery'),
 			'manage_options',
 			'post-new.php?post_type=js_gallery',
 			null,
@@ -78,7 +78,7 @@ class AdminMenu
 
 		if (isset($_GET['settings-updated'])) {
 			// add settings saved message with the class of "updated"
-			add_settings_error('js_gallery_options', 'js_gallery_message', __('Settings Saved', 'js-gallery'), 'success');
+			add_settings_error('js_gallery_options', 'js_gallery_message', __('Einstellung gespeichert', 'js-gallery'), 'success');
 		}
 		// show error/update messages
 		settings_errors('js_gallery_options');
@@ -97,10 +97,10 @@ class AdminMenu
 	{
 		$columns = [
 			'cb' => $columns['cb'],
-			'title' => esc_html__('Title'),
+			'title' => esc_html__('Titel', 'js-gallery'),
 			'js_gallery_images' => esc_html__('Bilder', 'js-gallery'),
 			'js_gallery_shortcode' => esc_html__('Shortcode', 'js-gallery'),
-			'date' => esc_html__('Date')
+			'date' => esc_html__('Datum', 'js-gallery')
 		];
 
 		return $columns;

@@ -1,0 +1,106 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: JS Gallery\n"
+"POT-Creation-Date: 2023-11-27 22:25+0100\n"
+"PO-Revision-Date: 2023-11-27 22:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: js-gallery.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: assets\\vendor\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+
+#: inc/Backend/AdminMenu.php:39 inc/Backend/AdminMenu.php:40
+msgid "JS Galerie"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:49 inc/Backend/AdminMenu.php:50
+msgid "Galerien verwalten"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:59 inc/Backend/AdminMenu.php:60
+msgid "Neue Galerie hinzufügen"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:81
+msgid "Einstellung gespeichert"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:100
+msgid "Titel"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:101
+msgid "Bilder"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:102
+msgid "Shortcode"
+msgstr ""
+
+#: inc/Backend/AdminMenu.php:103
+msgid "Datum"
+msgstr ""
+
+#: inc/Backend/MetaBoxes.php:44
+msgid "Galerie"
+msgstr ""
+
+#: inc/Backend/MetaBoxes.php:53
+msgid "Galerie Optionen"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#. Author of the plugin/theme
+#: inc/PostTypes/CP_Gallery.php:36 inc/PostTypes/CP_Gallery.php:37
+#: inc/PostTypes/CP_Gallery.php:39 inc/PostTypes/CP_Gallery.php:40
+msgid "JS Gallery"
+msgstr ""
+
+#: views/js-gallery_metabox.php:19 views/js-gallery_metabox.php:26
+#: views/js-gallery_metabox.php:27
+msgid "Bild ändern"
+msgstr ""
+
+#: views/js-gallery_metabox.php:19 views/js-gallery_metabox.php:26
+#: views/js-gallery_metabox.php:30
+msgid "Bild entfernen"
+msgstr ""
+
+#: views/js-gallery_metabox.php:19
+msgid "Bilder zur Galerie hinzufügen"
+msgstr ""
+
+#: views/js-gallery_metabox.php:19
+msgid "Bilder hinzufügen"
+msgstr ""
+
+#: views/js-gallery_options_metabox.php:19
+msgid "Bilder zuschneiden"
+msgstr ""
+
+#: views/js-gallery_options_metabox.php:21
+msgid " Bilder werden auf die default Größe zugeschnitten."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://www.jsgallery.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Ein einfaches Galerie-Plugin"
+msgstr ""

@@ -3,7 +3,7 @@
 /**
  * Plugin Name: JS Gallery
  * Plugin URI: http://www.jsgallery.com
- * Description: A simple gallery plugin
+ * Description: Ein einfaches Galerie-Plugin
  * Version: 1.0
  * Author: JS Gallery
  * Author URI: http://www.jsgallery.com
