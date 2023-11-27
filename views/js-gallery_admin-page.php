@@ -2,6 +2,7 @@
 
 /**
  * The admin page for the JS gallery plugin.
+ *
  * @package js-gallery
  */
 

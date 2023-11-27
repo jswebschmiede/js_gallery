@@ -41,6 +41,7 @@ class Gallery
 
 	/**
 	 * Defines the constants for the JS Gallery plugin.
+	 *
 	 * @return void
 	 */
 	private static function define_constants(): void

@@ -15,6 +15,11 @@ defined('ABSPATH') or die('Thanks for visting');
  */
 class AdminMenu
 {
+	/**
+	 * Initializes the admin menu.
+	 *
+	 * @return void
+	 */
 	public static function init(): void
 	{
 		add_action('admin_menu', [__CLASS__, 'add_admin_menu']);
@@ -62,6 +67,7 @@ class AdminMenu
 
 	/**
 	 * Renders the admin page for the JS Gallery plugin.
+	 *
 	 * @return void
 	 */
 	public static function render_admin_page(): void
