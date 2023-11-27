@@ -1,6 +1,9 @@
 jQuery(function ($) {
 	var file_frame;
 
+	/*
+	 * make gallery items sortable
+	 */
 	function makeSortable() {
 		jQuery("#gallery-metabox-list").sortable({
 			opacity: 0.6,
@@ -10,6 +13,9 @@ jQuery(function ($) {
 		});
 	}
 
+	/*
+	 * Reorder images numbering
+	 */
 	function resetIndex() {
 		jQuery("#gallery-metabox-list li").each(function (i) {
 			jQuery(this)
@@ -18,6 +24,9 @@ jQuery(function ($) {
 		});
 	}
 
+	/*
+	 * Select/Upload image(s) event
+	 */
 	$(document).on("click", "a.gallery-add", function (e) {
 		e.preventDefault();
 
@@ -29,6 +38,17 @@ jQuery(function ($) {
 				text: $(this).data("uploader-button-text"),
 			},
 			multiple: "add",
+		});
+
+		file_frame.on("open", function () {
+			var selection = file_frame.state().get("selection");
+			var attachment = $("#gallery-metabox-list").find("input:hidden");
+
+			if (attachment) {
+				attachment.each(function (i) {
+					selection.add(wp.media.attachment($(this).val()));
+				});
+			}
 		});
 
 		file_frame.on("select", function () {
@@ -51,6 +71,9 @@ jQuery(function ($) {
 		file_frame.open();
 	});
 
+	/*
+	 * Remove image event
+	 */
 	$(document).on("click", "a.remove-image", function (e) {
 		e.preventDefault();
 		$(this)
@@ -61,6 +84,9 @@ jQuery(function ($) {
 			});
 	});
 
+	/*
+	 * Image change event
+	 */
 	$(document).on("click", "a.change-image", function (e) {
 		e.preventDefault();
 
@@ -76,9 +102,16 @@ jQuery(function ($) {
 			multiple: false,
 		});
 
+		file_frame.on("open", function () {
+			var selection = file_frame.state().get("selection");
+			var attachment = that.parent().find("input:hidden").val();
+			if (attachment) {
+				selection.add(wp.media.attachment(attachment));
+			}
+		});
+
 		file_frame.on("select", function () {
 			attachment = file_frame.state().get("selection").first().toJSON();
-
 			that.parent().find("input:hidden").attr("value", attachment.id);
 			that.parent().find("img.image-preview").attr("src", attachment.url);
 		});

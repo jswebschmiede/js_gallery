@@ -53,7 +53,9 @@ class Shortcode
 
 		require  plugin_dir_path(dirname(dirname(__FILE__))) . 'views/js-gallery_shortcode.php';
 		wp_enqueue_style('js-gallery-venobox');
+		wp_enqueue_style('js-gallery-styles');
 		wp_enqueue_script('js-gallery-venobox');
+		wp_enqueue_script('js-gallery-main');
 		return ob_get_clean();
 	}
 }
