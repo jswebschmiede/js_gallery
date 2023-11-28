@@ -26,7 +26,6 @@ class Settings
 	{
 		self::$options = get_option('js_gallery_options');
 		add_action('admin_init', [__CLASS__, 'register_options']);
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueue_admin_js'));
 	}
 
 	/**
@@ -64,21 +63,6 @@ class Settings
 				'label_for' => 'js_gallery_primary_color',
 			]
 		);
-	}
-
-	/**
-	 * Enqueues the admin js.
-	 * @param string $hook The hook to enqueue the js on.
-	 * @return void
-	 */
-	public static function enqueue_admin_js($hook): void
-	{
-		if ($hook !== 'toplevel_page_js-gallery-admin') {
-			return;
-		}
-
-		wp_enqueue_style('wp-color-picker');
-		wp_enqueue_script('wp-color-picker');
 	}
 
 	/**

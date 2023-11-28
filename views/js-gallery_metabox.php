@@ -10,7 +10,7 @@ defined('ABSPATH') or die('Thanks for visting');
 
 $ids = get_post_meta($post->ID, '_js_gallery_gal_ids', true);
 
-wp_enqueue_media();
+
 ?>
 
 <table class="form-table js-gallery-metabox">

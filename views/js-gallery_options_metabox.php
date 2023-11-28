@@ -8,8 +8,6 @@
 
 defined('ABSPATH') or die('Thanks for visting');
 
-
-
 ?>
 
 <table class="form-table js-gallery-options-metabox">

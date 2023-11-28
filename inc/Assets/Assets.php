@@ -23,7 +23,7 @@ class Assets
 	public static function init()
 	{
 		add_action('wp_enqueue_scripts', [__CLASS__, 'register_scripts'], 999);
-		add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_metabox_scripts']);
+		add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_admin_scripts']);
 	}
 
 	/**
@@ -44,13 +44,25 @@ class Assets
 	 *
 	 * @return void
 	 */
-	public static function enqueue_metabox_scripts(): void
+	public static function enqueue_admin_scripts($hook): void
 	{
 		global $typenow;
 
-		if ($typenow == 'js_gallery') {
+		/**
+		 * Enqueue the metabox scripts and styles.
+		 */
+		if ($typenow === 'js_gallery') {
 			wp_enqueue_script('js-gallery-admin', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/js/gallery-metabox.js', array('jquery'), JS_GALLERY_VERSION, true);
 			wp_enqueue_style('js-gallery-admin', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/css/gallery-metabox.css', array(), JS_GALLERY_VERSION, 'all');
+			wp_enqueue_media();
+		}
+
+		/**
+		 * Enqueue the color picker for the settings page.
+		 */
+		if ($hook === 'toplevel_page_js-gallery-admin') {
+			wp_enqueue_style('wp-color-picker');
+			wp_enqueue_script('wp-color-picker');
 		}
 	}
 }
