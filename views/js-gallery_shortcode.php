@@ -13,6 +13,12 @@ $args = [
 	'post_status' => 'publish',
 	'post__in' => $id,
 	'posts_per_page' => -1,
+	'meta_query' => [
+		[
+			'key' => '_js_gallery_gal_ids',
+			'compare' => 'EXISTS',
+		],
+	],
 ];
 
 // The Query

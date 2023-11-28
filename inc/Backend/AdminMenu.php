@@ -36,8 +36,8 @@ class AdminMenu
 	public static function add_admin_menu(): void
 	{
 		add_menu_page(
-			__('Simple Galerie', 'js-gallery'),
-			__('Simple Galerie', 'js-gallery'),
+			__('Simple Gallery', 'js-gallery'),
+			__('Simple Gallery', 'js-gallery'),
 			'manage_options',
 			'js-gallery-admin',
 			[__CLASS__, 'render_admin_page'],
