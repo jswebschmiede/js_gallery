@@ -30,7 +30,7 @@ class Gallery
 	{
 		self::define_constants();
 		add_action('after_setup_theme', [__CLASS__, 'add_custom_image_sizes']);
-		add_action('plugins_loaded', [__CLASS__, 'load_textdomain']);
+		add_action('init', [__CLASS__, 'load_textdomain']);
 
 
 		Assets::init();
