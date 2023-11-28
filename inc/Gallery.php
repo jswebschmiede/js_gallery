@@ -13,6 +13,7 @@ defined('ABSPATH') or die('Thanks for visting');
 use JS_Gallery\Assets\Assets;
 use JS_Gallery\Backend\AdminMenu;
 use JS_Gallery\Backend\MetaBoxes;
+use JS_Gallery\Backend\Settings;
 use JS_Gallery\PostTypes\CP_Gallery;
 use JS_Gallery\Shortcodes\Shortcode;
 
@@ -37,6 +38,7 @@ class Gallery
 		CP_Gallery::init();
 		AdminMenu::init();
 		MetaBoxes::init();
+		Settings::init();
 		Shortcode::init();
 	}
 
