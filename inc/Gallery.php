@@ -30,6 +30,8 @@ class Gallery
 	{
 		self::define_constants();
 		add_action('after_setup_theme', [__CLASS__, 'add_custom_image_sizes']);
+		add_action('init', [__CLASS__, 'load_textdomain']);
+
 
 		Assets::init();
 		CP_Gallery::init();
@@ -54,6 +56,11 @@ class Gallery
 	public static function add_custom_image_sizes(): void
 	{
 		add_image_size('js-gallery-large', 770, 580, true);
+	}
+
+	public static function load_textdomain(): void
+	{
+		load_plugin_textdomain('js-gallery', false, plugin_dir_path(dirname(__FILE__)) . '/languages');
 	}
 
 	/**

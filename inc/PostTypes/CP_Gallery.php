@@ -33,11 +33,11 @@ class CP_Gallery
 	public static function create_post_type(): void
 	{
 		register_post_type('js_gallery', [
-			'label' => __('JS Gallery', 'js-gallery'),
-			'description' => __('JS Gallery', 'js-gallery'),
+			'label' => __('Simple Gallery', 'js-gallery'),
+			'description' => __('Simple Gallery', 'js-gallery'),
 			'labels' => [
-				'name' => __('JS Gallery', 'js-gallery'),
-				'singular_name' => __('JS Gallery', 'js-gallery'),
+				'name' => __('Simple Gallery', 'js-gallery'),
+				'singular_name' => __('Simple Gallery', 'js-gallery'),
 			],
 			'public'            => true,
 			'has_archive'       => false,

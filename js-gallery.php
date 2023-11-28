@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name: JS Gallery
- * Plugin URI: http://www.jsgallery.com
- * Description: Ein einfaches Galerie-Plugin
+ * Plugin Name: Simple Gallery
+ * Plugin URI: https://joerg-schoeneburg.de
+ * Description: A simple gallery plugin.
  * Version: 1.0
- * Author: JS Gallery
- * Author URI: http://www.jsgallery.com
+ * Author: Joerg Schoeneburg
+ * Author URI: https://joerg-schoeneburg.de
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: js-gallery

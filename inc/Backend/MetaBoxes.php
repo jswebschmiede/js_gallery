@@ -41,7 +41,7 @@ class MetaBoxes
 		 */
 		add_meta_box(
 			'js_gallery_meta_box',
-			__('Galerie', 'js-gallery'),
+			__('Gallery', 'js-gallery'),
 			[__CLASS__, 'render_meta_box'],
 			'js_gallery',
 			'normal',
@@ -50,7 +50,7 @@ class MetaBoxes
 
 		add_meta_box(
 			'js_gallery_options_meta_box',
-			__('Galerie Optionen', 'js-gallery'),
+			__('Gallery Settings', 'js-gallery'),
 			[__CLASS__, 'render_options_meta_box'],
 			'js_gallery',
 			'side',
