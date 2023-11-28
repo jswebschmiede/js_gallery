@@ -36,7 +36,7 @@ class Assets
 		wp_register_script('js-gallery-venobox', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/vendor/venobox/venobox-min.js', array('jquery'), JS_GALLERY_VERSION, true);
 		wp_register_script('js-gallery-main', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/js/main.js', array('jquery'), JS_GALLERY_VERSION, true);
 		wp_register_style('js-gallery-venobox', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/vendor/venobox/venobox.min.css', array(), JS_GALLERY_VERSION, 'all');
-		wp_register_style('js-gallery-styles', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/css/styles.css', array(), JS_GALLERY_VERSION, 'all');
+		wp_register_style('js-gallery-styles', plugin_dir_url(dirname(dirname(__FILE__))) . 'assets/css/styles-min.css', array(), JS_GALLERY_VERSION, 'all');
 	}
 
 	/**

@@ -1,8 +1,11 @@
 # Ignore dependencies from npm and Composer:
-/node_modules
+node_modules
+pnpm-lock.yaml
 
 # Ignore dependencies from Composer:
 /vendor
 
 # Ignore .DS_Store files from macOS:
 .DS_Store
+
+

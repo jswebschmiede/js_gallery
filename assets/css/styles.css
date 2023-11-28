@@ -1,65 +1,13 @@
-.js-gallery {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-gap: 1rem;
-}
-
-.js-gallery__image,
-.js-gallery__image-wrap {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	position: relative;
-	overflow: hidden;
-	border-radius: 17px;
-}
-
-.js-gallery__image {
-	width: 100%;
-	object-fit: cover;
-}
-
-.js-gallery .js-gallery__left {
-	grid-column: span 9;
-}
-.js-gallery .js-gallery__right {
-	display: grid;
-	grid-column: span 3;
-	grid-gap: 1rem;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .js-gallery__overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	display: flex;
-	justify-content: flex-start;
-	padding: 0 5rem;
-	align-items: center;
-	color: #fff;
-}
-
-.js-gallery__overlay--text {
-	font-size: 1.25rem;
-	max-width: 390px;
+	@apply absolute bg-black/50 w-full h-full flex justify-start items-center text-white px-20 py-0 left-0 top-0;
 }
 
 .js-gallery__openlightbox {
-	position: absolute;
-	top: 2rem;
-	right: 2rem;
-	padding: 1rem;
-	border-radius: 17px;
 	background: var(--tw-prose-links);
-}
-
-.js-gallery__openlightbox--icon {
-	width: 36px;
-	height: 36px;
-	color: #fff;
 }
 
 /*
@@ -67,5 +15,5 @@
 */
 
 .vbox-container {
-	overflow: hidden !important;
+	@apply overflow-hidden;
 }
