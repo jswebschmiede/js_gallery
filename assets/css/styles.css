@@ -7,7 +7,7 @@
 }
 
 .js-gallery__openlightbox {
-	background: var(--tw-prose-links);
+	background-color: var(--js-gallery-primary-color, #000);
 }
 
 /*

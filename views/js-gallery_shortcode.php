@@ -6,6 +6,9 @@
  * @package js-gallery
  */
 
+defined('ABSPATH') or die('Thanks for visting');
+
+use JS_Gallery\Backend\Settings;
 
 // WP_Query arguments
 $args = [
@@ -24,7 +27,15 @@ $args = [
 // The Query
 $query = new WP_Query($args);
 
+$js_gallery_primary_color = Settings::$options['js_gallery_primary_color'];
 ?>
+
+
+<style>
+	:root {
+		--js-gallery-primary-color: <?php echo $js_gallery_primary_color; ?>;
+	}
+</style>
 
 <div class="js-gallery grid grid-cols-12 gap-4">
 	<?php while ($query->have_posts()) : ?>
